@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: ms-eureka
+
+---
+# Perfil local (ejecutar directo en el PC, sin Docker)
+spring:
+  config:
+    activate:
+      on-profile: local
+server:
+  port: 8761
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+  server:
+    enable-self-preservation: false
+
+---
+# Perfil docker
+spring:
+  config:
+    activate:
+      on-profile: docker
+server:
+  port: ${PORT:8761}
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+  server:
+    enable-self-preservation: false
+  instance:
+    prefer-ip-address: true

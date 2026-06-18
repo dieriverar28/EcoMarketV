@@ -1,0 +1,236 @@
+services:
+
+  # ===================== BASE DE DATOS COMPARTIDA =====================
+  mysql:
+    image: mysql:8.0
+    container_name: ecomarket-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: db_ecomarket
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin123
+    ports:
+      - "3306:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-uroot", "-proot123"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    volumes:
+      - ecomarket-mysql-data:/var/lib/mysql
+    restart: unless-stopped
+
+  # ===================== EUREKA SERVER =====================
+  ms-eureka:
+    build: ./ms-eureka
+    container_name: ms-eureka
+    ports:
+      - "8761:8761"
+    environment:
+      SPRING_PROFILES_ACTIVE: "docker"
+    restart: unless-stopped
+
+  # ===================== MICROSERVICIOS =====================
+  ms-usuario:
+    build: ./MicroServicioUsuarioSeguridad
+    container_name: ms-usuario
+    ports:
+      - "8081:8081"
+    environment:
+      SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3306/db_ecomarket?allowPublicKeyRetrieval=true&useSSL=false"
+      SPRING_DATASOURCE_USERNAME: "admin"
+      SPRING_DATASOURCE_PASSWORD: "admin123"
+      SPRING_PROFILES_ACTIVE: "docker"
+      SPRING_JPA_HIBERNATE_DDL_AUTO: "update"
+      EUREKA_CLIENT_ENABLED: "true"
+      EUREKA_URL: "http://ms-eureka:8761/eureka"
+    depends_on:
+      mysql:
+        condition: service_healthy
+      ms-eureka:
+        condition: service_started
+    restart: unless-stopped
+
+  ms-cliente:
+    build: ./MicroServicioCliente
+    container_name: ms-cliente
+    ports:
+      - "8082:8082"
+    environment:
+      SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3306/db_ecomarket?allowPublicKeyRetrieval=true&useSSL=false"
+      SPRING_DATASOURCE_USERNAME: "admin"
+      SPRING_DATASOURCE_PASSWORD: "admin123"
+      SPRING_PROFILES_ACTIVE: "docker"
+      SPRING_JPA_HIBERNATE_DDL_AUTO: "update"
+      EUREKA_CLIENT_ENABLED: "true"
+      EUREKA_URL: "http://ms-eureka:8761/eureka"
+    depends_on:
+      mysql:
+        condition: service_healthy
+      ms-eureka:
+        condition: service_started
+    restart: unless-stopped
+
+  ms-producto:
+    build: ./MicroServicioProducto
+    container_name: ms-producto
+    ports:
+      - "8083:8083"
+    environment:
+      SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3306/db_ecomarket?allowPublicKeyRetrieval=true&useSSL=false"
+      SPRING_DATASOURCE_USERNAME: "admin"
+      SPRING_DATASOURCE_PASSWORD: "admin123"
+      SPRING_PROFILES_ACTIVE: "docker"
+      SPRING_JPA_HIBERNATE_DDL_AUTO: "update"
+      EUREKA_CLIENT_ENABLED: "true"
+      EUREKA_URL: "http://ms-eureka:8761/eureka"
+    depends_on:
+      mysql:
+        condition: service_healthy
+      ms-eureka:
+        condition: service_started
+    restart: unless-stopped
+
+  ms-inventario:
+    build: ./MicroServicioInventario
+    container_name: ms-inventario
+    ports:
+      - "8084:8084"
+    environment:
+      SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3306/db_ecomarket?allowPublicKeyRetrieval=true&useSSL=false"
+      SPRING_DATASOURCE_USERNAME: "admin"
+      SPRING_DATASOURCE_PASSWORD: "admin123"
+      SPRING_PROFILES_ACTIVE: "docker"
+      SPRING_JPA_HIBERNATE_DDL_AUTO: "update"
+      EUREKA_CLIENT_ENABLED: "true"
+      EUREKA_URL: "http://ms-eureka:8761/eureka"
+    depends_on:
+      mysql:
+        condition: service_healthy
+      ms-eureka:
+        condition: service_started
+    restart: unless-stopped
+
+  ms-venta:
+    build: ./MicroServicioVenta
+    container_name: ms-venta
+    ports:
+      - "8085:8085"
+    environment:
+      SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3306/db_ecomarket?allowPublicKeyRetrieval=true&useSSL=false"
+      SPRING_DATASOURCE_USERNAME: "admin"
+      SPRING_DATASOURCE_PASSWORD: "admin123"
+      SPRING_PROFILES_ACTIVE: "docker"
+      SPRING_JPA_HIBERNATE_DDL_AUTO: "update"
+      EUREKA_CLIENT_ENABLED: "true"
+      EUREKA_URL: "http://ms-eureka:8761/eureka"
+    depends_on:
+      mysql:
+        condition: service_healthy
+      ms-eureka:
+        condition: service_started
+    restart: unless-stopped
+
+  ms-pedido:
+    build: ./MicroServicioPedido
+    container_name: ms-pedido
+    ports:
+      - "8086:8086"
+    environment:
+      SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3306/db_ecomarket?allowPublicKeyRetrieval=true&useSSL=false"
+      SPRING_DATASOURCE_USERNAME: "admin"
+      SPRING_DATASOURCE_PASSWORD: "admin123"
+      SPRING_PROFILES_ACTIVE: "docker"
+      SPRING_JPA_HIBERNATE_DDL_AUTO: "update"
+      EUREKA_CLIENT_ENABLED: "true"
+      EUREKA_URL: "http://ms-eureka:8761/eureka"
+    depends_on:
+      mysql:
+        condition: service_healthy
+      ms-eureka:
+        condition: service_started
+    restart: unless-stopped
+
+  ms-envio:
+    build: ./MicroServicioEnvio
+    container_name: ms-envio
+    ports:
+      - "8087:8087"
+    environment:
+      SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3306/db_ecomarket?allowPublicKeyRetrieval=true&useSSL=false"
+      SPRING_DATASOURCE_USERNAME: "admin"
+      SPRING_DATASOURCE_PASSWORD: "admin123"
+      SPRING_PROFILES_ACTIVE: "docker"
+      SPRING_JPA_HIBERNATE_DDL_AUTO: "update"
+      EUREKA_CLIENT_ENABLED: "true"
+      EUREKA_URL: "http://ms-eureka:8761/eureka"
+    depends_on:
+      mysql:
+        condition: service_healthy
+      ms-eureka:
+        condition: service_started
+    restart: unless-stopped
+
+  ms-postventa:
+    build: ./MicroServicioPostVenta
+    container_name: ms-postventa
+    ports:
+      - "8088:8088"
+    environment:
+      SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3306/db_ecomarket?allowPublicKeyRetrieval=true&useSSL=false"
+      SPRING_DATASOURCE_USERNAME: "admin"
+      SPRING_DATASOURCE_PASSWORD: "admin123"
+      SPRING_PROFILES_ACTIVE: "docker"
+      SPRING_JPA_HIBERNATE_DDL_AUTO: "update"
+      EUREKA_CLIENT_ENABLED: "true"
+      EUREKA_URL: "http://ms-eureka:8761/eureka"
+    depends_on:
+      mysql:
+        condition: service_healthy
+      ms-eureka:
+        condition: service_started
+    restart: unless-stopped
+
+  ms-descuento:
+    build: ./MicroServicioDescuento
+    container_name: ms-descuento
+    ports:
+      - "8089:8089"
+    environment:
+      SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3306/db_ecomarket?allowPublicKeyRetrieval=true&useSSL=false"
+      SPRING_DATASOURCE_USERNAME: "admin"
+      SPRING_DATASOURCE_PASSWORD: "admin123"
+      SPRING_PROFILES_ACTIVE: "docker"
+      SPRING_JPA_HIBERNATE_DDL_AUTO: "update"
+      EUREKA_CLIENT_ENABLED: "true"
+      EUREKA_URL: "http://ms-eureka:8761/eureka"
+    depends_on:
+      mysql:
+        condition: service_healthy
+      ms-eureka:
+        condition: service_started
+    restart: unless-stopped
+
+  ms-tienda:
+    build: ./MicroServicioTiendaUbi
+    container_name: ms-tienda
+    ports:
+      - "8090:8090"
+    environment:
+      SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3306/db_ecomarket?allowPublicKeyRetrieval=true&useSSL=false"
+      SPRING_DATASOURCE_USERNAME: "admin"
+      SPRING_DATASOURCE_PASSWORD: "admin123"
+      SPRING_PROFILES_ACTIVE: "docker"
+      SPRING_JPA_HIBERNATE_DDL_AUTO: "update"
+      EUREKA_CLIENT_ENABLED: "true"
+      EUREKA_URL: "http://ms-eureka:8761/eureka"
+    depends_on:
+      mysql:
+        condition: service_healthy
+      ms-eureka:
+        condition: service_started
+    restart: unless-stopped
+
+volumes:
+  ecomarket-mysql-data:
