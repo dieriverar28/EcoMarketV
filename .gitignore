@@ -1,0 +1,22 @@
+﻿# Maven
+target/
+*.class
+
+# Logs
+logs/
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# Variables de entorno
+.env
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Eureka / Spring Boot
+HELP.md

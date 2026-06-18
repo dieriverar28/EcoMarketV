@@ -1,0 +1,37 @@
+package com.example.MicroPedido.dto;
+
+import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+public class CategoriaDTO {
+
+    @Data
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class Request {
+//poner id_categoria 
+        @Id
+        private int id_categoria;
+        @NotBlank(message = "El nombre es obligatorio")
+        @Size(min = 3, max = 50, message = "El nombre debe tener entre 3 y 50 caracteres")
+        private String nombre;
+
+        @NotNull(message = "El estado es obligatorio")
+        private boolean estado;
+    }
+
+    @Data
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class Response {
+
+        private int id_categoria;
+        private String nombre;
+        private boolean estado;
+    }
+}
