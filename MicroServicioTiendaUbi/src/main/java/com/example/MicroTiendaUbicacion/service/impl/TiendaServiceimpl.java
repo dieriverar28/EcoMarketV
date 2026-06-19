@@ -11,11 +11,11 @@ import com.example.MicroTiendaUbicacion.repository.TiendaRepository;
 import com.example.MicroTiendaUbicacion.service.TiendaService;
 
 @Service
-public class TiendaServiceImpl implements TiendaService {
+public class TiendaServiceimpl implements TiendaService {
 
     private final TiendaRepository repository;
 
-    public TiendaServiceImpl(TiendaRepository repository) {
+    public TiendaServiceimpl(TiendaRepository repository) {
         this.repository = repository;
     }
 
