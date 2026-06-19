@@ -48,7 +48,7 @@ public class UsuarioController {
     @PostMapping
     @Operation(summary = "Crear un nuevo usuario", description = "Registra un usuario con los datos proporcionados")
     @ApiResponse(responseCode = "201", description = "Usuario creado exitosamente")
-    public ResponseEntity<UsuarioDTO.Response> guardar(@Valid @RequestBody UsuarioDTO request) {
+    public ResponseEntity<UsuarioDTO.Response> guardar(@Valid @RequestBody UsuarioDTO.Request request) {
         return new ResponseEntity<>(usuarioService.guardar(request), HttpStatus.CREATED);
     }
 
@@ -58,7 +58,7 @@ public class UsuarioController {
     public ResponseEntity<UsuarioDTO.Response> actualizar(
             @Parameter(description = "ID del usuario a modificar", example = "1") 
             @PathVariable Integer id, 
-            @Valid @RequestBody UsuarioDTO request) {
+            @Valid @RequestBody UsuarioDTO.Request request) {
         return ResponseEntity.ok(usuarioService.actualizar(id, request));
     }
 

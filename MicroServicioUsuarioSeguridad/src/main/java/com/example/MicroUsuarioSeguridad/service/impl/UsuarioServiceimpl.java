@@ -6,7 +6,11 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 
 import com.example.MicroUsuarioSeguridad.dto.UsuarioDTO;
+import com.example.MicroUsuarioSeguridad.entity.Genero;
+import com.example.MicroUsuarioSeguridad.entity.RolPermiso;
 import com.example.MicroUsuarioSeguridad.entity.Usuario;
+import com.example.MicroUsuarioSeguridad.repository.GeneroRepository;
+import com.example.MicroUsuarioSeguridad.repository.RolPermisoRepository;
 import com.example.MicroUsuarioSeguridad.repository.UsuarioRepository;
 import com.example.MicroUsuarioSeguridad.service.UsuarioService;
 
@@ -17,6 +21,8 @@ import lombok.RequiredArgsConstructor;
 public class UsuarioServiceimpl implements UsuarioService {
 
     private final UsuarioRepository usuarioRepository;
+    private final GeneroRepository generoRepository;
+    private final RolPermisoRepository rolPermisoRepository;
 
     @Override
     public List<UsuarioDTO.Response> listar() {
@@ -35,35 +41,40 @@ public class UsuarioServiceimpl implements UsuarioService {
     }
 
     @Override
-    public UsuarioDTO.Response guardar(UsuarioDTO request) { // <-- Cambiado a UsuarioDTO
+    public UsuarioDTO.Response guardar(UsuarioDTO.Request request) {
         Usuario usuario = new Usuario();
-
-        usuario.setNombre(request.getNombre());
-        usuario.setCorreo(request.getCorreo());
-        usuario.setTelefono(request.getTelefono());
-        usuario.setIdTienda(request.getId_tienda());
-        usuario.setEstado(request.getEstado());
-
+        aplicarDatos(usuario, request);
         return toResponse(usuarioRepository.save(usuario));
     }
 
     @Override
-    public UsuarioDTO.Response actualizar(Integer id, UsuarioDTO request) { // <-- Cambiado a UsuarioDTO
+    public UsuarioDTO.Response actualizar(Integer id, UsuarioDTO.Request request) {
         Usuario usuario = usuarioRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
 
-        usuario.setNombre(request.getNombre());
-        usuario.setCorreo(request.getCorreo());
-        usuario.setTelefono(request.getTelefono());
-        usuario.setIdTienda(request.getId_tienda());
-        usuario.setEstado(request.getEstado());
-
+        aplicarDatos(usuario, request);
         return toResponse(usuarioRepository.save(usuario));
     }
 
     @Override
     public void eliminar(Integer id) {
         usuarioRepository.deleteById(id);
+    }
+
+    private void aplicarDatos(Usuario usuario, UsuarioDTO.Request request) {
+        Genero genero = generoRepository.findById(request.getId_genero())
+                .orElseThrow(() -> new RuntimeException("Genero no encontrado"));
+
+        RolPermiso rol = rolPermisoRepository.findById(request.getId_rol())
+                .orElseThrow(() -> new RuntimeException("Rol no encontrado"));
+
+        usuario.setGenero(genero);
+        usuario.setRol(rol);
+        usuario.setNombre(request.getNombre());
+        usuario.setCorreo(request.getCorreo());
+        usuario.setTelefono(request.getTelefono());
+        usuario.setIdTienda(request.getId_tienda());
+        usuario.setEstado(Boolean.TRUE.equals(request.getEstado()));
     }
 
     private UsuarioDTO.Response toResponse(Usuario usuario) {
