@@ -1,4 +1,4 @@
-package com.example.MicroEnvio.model;
+package com.example.MicroEnvio.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -22,3 +22,4 @@ public class Proveedor {
     @Column(name = "nombre", nullable = false, length = 100)
     private String nombre;
 }
+

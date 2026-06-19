@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.MicroVenta.dto.ClienteDTO;
-import com.example.MicroVenta.model.Cliente;
+import com.example.MicroVenta.entity.Cliente;
 import com.example.MicroVenta.repository.ClienteRepository;
 import com.example.MicroVenta.service.ClienteService;
 
@@ -77,3 +77,4 @@ public class ClienteServiceImpl implements ClienteService {
     }
 
 }
+

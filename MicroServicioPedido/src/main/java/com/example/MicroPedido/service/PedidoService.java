@@ -2,7 +2,7 @@ package com.example.MicroPedido.service;
 
 import java.util.List;
 
-import com.example.MicroPedido.model.Pedido;
+import com.example.MicroPedido.entity.Pedido;
 
 public interface PedidoService {
 

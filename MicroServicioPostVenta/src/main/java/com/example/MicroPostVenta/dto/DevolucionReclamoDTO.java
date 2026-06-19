@@ -4,9 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import com.example.MicroPostVenta.model.Cliente;
-import com.example.MicroPostVenta.model.Producto;
-import com.example.MicroPostVenta.model.Venta;
+import com.example.MicroPostVenta.entity.Cliente;
+import com.example.MicroPostVenta.entity.Producto;
+import com.example.MicroPostVenta.entity.Venta;
 
 import jakarta.validation.constraints.NotNull;
 
@@ -54,3 +54,4 @@ public class DevolucionReclamoDTO {
     }
 
 }
+

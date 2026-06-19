@@ -1,6 +1,6 @@
 package com.example.MicroEnvio.repository;
 
-import com.example.MicroEnvio.model.Proveedor;
+import com.example.MicroEnvio.entity.Proveedor;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -8,3 +8,4 @@ import org.springframework.stereotype.Repository;
 public interface ProveedorRepository extends JpaRepository<Proveedor, Integer> {
     boolean existsByNombre(String nombre);
 }
+

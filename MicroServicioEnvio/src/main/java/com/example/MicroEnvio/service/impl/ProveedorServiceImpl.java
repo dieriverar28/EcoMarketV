@@ -1,7 +1,7 @@
 package com.example.MicroEnvio.service.impl;
 
 import com.example.MicroEnvio.dto.ProveedorDTO;
-import com.example.MicroEnvio.model.Proveedor;
+import com.example.MicroEnvio.entity.Proveedor;
 import com.example.MicroEnvio.repository.ProveedorRepository;
 import com.example.MicroEnvio.service.ProveedorService;
 import lombok.RequiredArgsConstructor;
@@ -64,3 +64,4 @@ public class ProveedorServiceImpl implements ProveedorService {
         return new ProveedorDTO.Response(p.getId(), p.getNombre());
     }
 }
+

@@ -1,4 +1,4 @@
-package com.example.MicroPostVenta.model;
+package com.example.MicroPostVenta.entity;
 
 import java.sql.Date;
 
@@ -13,26 +13,25 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity //se conecta con entidad
-@Table(name="pedido") //la tabla nombre persona
+@Table(name="resenacalificacion") //la tabla nombre persona
 @Data //antes de data ahora va lo de arriba
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class Pedido {
+public class ResenaCalificacion {
     @Id
-    private int id_pedido;
+    private int id_resena;
     @ManyToOne
     @JoinColumn(name="id_cliente", nullable=false)
     private Cliente cliente;
     @ManyToOne
-    @JoinColumn(name="id_tienda", nullable=false)
-    private Tienda tienda;
+    @JoinColumn(name="id_producto", nullable=false)
+    private Producto producto;
+    @Column(name="motivo", nullable=false)
+    private String motivo;
     @Column(name="estado", nullable=false)
     private boolean estado;
-    @ManyToOne
-    @JoinColumn(name="id_cupon", nullable=false)
-    private CuponDescuento cupondescuento;
-    @Column(name="fecha_pedido", nullable=false)
-    private Date fecha_pedido;
+    private Date fecha;
 
 }
+

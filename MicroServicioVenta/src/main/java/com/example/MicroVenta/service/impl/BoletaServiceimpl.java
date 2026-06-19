@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.MicroVenta.model.Boleta;
+import com.example.MicroVenta.entity.Boleta;
 import com.example.MicroVenta.repository.BoletaRepository;
 import com.example.MicroVenta.service.BoletaService;
 
@@ -47,3 +47,4 @@ public class BoletaServiceimpl implements BoletaService {
         return 1;
     }
 }
+

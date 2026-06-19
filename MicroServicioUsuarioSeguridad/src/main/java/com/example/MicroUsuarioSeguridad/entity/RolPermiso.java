@@ -1,4 +1,4 @@
-package com.example.MicroUsuarioSeguridad.model;
+package com.example.MicroUsuarioSeguridad.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

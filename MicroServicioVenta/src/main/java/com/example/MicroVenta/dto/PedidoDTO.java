@@ -2,9 +2,9 @@ package com.example.MicroVenta.dto;
 
 import java.sql.Date;
 
-import com.example.MicroVenta.model.Cliente;
-import com.example.MicroVenta.model.CuponDescuento;
-import com.example.MicroVenta.model.Tienda;
+import com.example.MicroVenta.entity.Cliente;
+import com.example.MicroVenta.entity.CuponDescuento;
+import com.example.MicroVenta.entity.Tienda;
 
 
 import jakarta.validation.constraints.NotNull;

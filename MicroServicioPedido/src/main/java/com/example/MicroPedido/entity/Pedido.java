@@ -1,4 +1,4 @@
-package com.example.MicroPedido.model;
+package com.example.MicroPedido.entity;
 
 import java.sql.Date;
 

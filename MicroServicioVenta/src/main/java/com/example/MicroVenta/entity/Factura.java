@@ -1,4 +1,4 @@
-package com.example.MicroVenta.model;
+package com.example.MicroVenta.entity;
 
 import java.sql.Date;
 import jakarta.persistence.Entity;
@@ -43,3 +43,4 @@ public class Factura {
     private String email_envio;
 
 }
+

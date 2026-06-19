@@ -1,7 +1,7 @@
 package com.example.MicroEnvio.service.impl;
 
 import com.example.MicroEnvio.dto.VentaDTO;
-import com.example.MicroEnvio.model.Venta;
+import com.example.MicroEnvio.entity.Venta;
 import com.example.MicroEnvio.repository.VentaRepository;
 import com.example.MicroEnvio.service.VentaService;
 import lombok.RequiredArgsConstructor;
@@ -77,3 +77,4 @@ public class VentaServiceImpl implements VentaService {
                 v.getDescuento_aplicado(), v.getTipo_documento());
     }
 }
+

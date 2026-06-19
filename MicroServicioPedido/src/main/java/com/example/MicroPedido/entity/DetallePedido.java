@@ -1,4 +1,4 @@
-package com.example.MicroPedido.model;
+package com.example.MicroPedido.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -11,9 +11,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 
-@Entity //se conecta con entidad
-@Table(name="detallepedido") //la tabla nombre persona
-@Data //antes de data ahora va lo de arriba
+@Entity
+@Table(name="detallepedido")
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class DetallePedido {

@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import com.example.MicroDescuento.model.CuponDescuento;
+import com.example.MicroDescuento.entity.CuponDescuento;
 import com.example.MicroDescuento.service.CuponDescuentoService;
 
 import jakarta.validation.Valid;
@@ -60,3 +60,4 @@ public class CuponDescuentoController {
         return "Error al eliminar el cupon de descuento";
     }
 }
+

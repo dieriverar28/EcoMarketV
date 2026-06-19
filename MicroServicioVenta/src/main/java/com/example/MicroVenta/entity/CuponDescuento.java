@@ -1,8 +1,6 @@
+package com.example.MicroVenta.entity;
 
-
-package com.example.MicroDescuento.model;
 import java.sql.Date;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -27,5 +25,5 @@ public class CuponDescuento {
     private Date fecha_expiracion;
     private boolean activo;
 
-
 }
+

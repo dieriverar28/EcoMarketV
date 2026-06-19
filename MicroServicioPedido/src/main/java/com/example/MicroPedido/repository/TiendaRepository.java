@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import com.example.MicroPedido.model.Tienda;
+import com.example.MicroPedido.entity.Tienda;
 
 @Repository
 public interface TiendaRepository extends JpaRepository<Tienda, Integer> {

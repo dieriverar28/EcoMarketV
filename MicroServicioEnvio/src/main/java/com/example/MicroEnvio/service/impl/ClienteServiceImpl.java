@@ -1,7 +1,7 @@
 package com.example.MicroEnvio.service.impl;
 
 import com.example.MicroEnvio.dto.ClienteDTO;
-import com.example.MicroEnvio.model.Cliente;
+import com.example.MicroEnvio.entity.Cliente;
 import com.example.MicroEnvio.repository.ClienteRepository;
 import com.example.MicroEnvio.service.ClienteService;
 import lombok.RequiredArgsConstructor;
@@ -74,3 +74,4 @@ public class ClienteServiceImpl implements ClienteService {
                 c.getTelefono(), c.getDireccion_envio(), c.getComuna());
     }
 }
+

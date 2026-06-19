@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.MicroPedido.model.DetallePedido;
+import com.example.MicroPedido.entity.DetallePedido;
 import com.example.MicroPedido.repository.DetallePedidoRepository;
 import com.example.MicroPedido.service.DetallePedidoService;
 

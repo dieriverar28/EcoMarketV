@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.example.MicroVenta.model.Pedido;
+import com.example.MicroVenta.entity.Pedido;
 
 @Repository
 public interface PedidoRepository extends JpaRepository<Pedido, Integer>{
@@ -17,3 +17,4 @@ public interface PedidoRepository extends JpaRepository<Pedido, Integer>{
     Pedido buscarPedido(int id_pedido);
 
 }
+

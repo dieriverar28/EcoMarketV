@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 
 import java.sql.Date;
 
-import com.example.MicroVenta.model.Venta;
+import com.example.MicroVenta.entity.Venta;
 
 public class BoletaDTO {
 
@@ -78,3 +78,4 @@ public class BoletaDTO {
     }
 
 }
+

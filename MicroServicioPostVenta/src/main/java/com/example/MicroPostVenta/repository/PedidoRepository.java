@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 
-import com.example.MicroPostVenta.model.Pedido;
+import com.example.MicroPostVenta.entity.Pedido;
 
 
 
@@ -20,3 +20,4 @@ public interface PedidoRepository extends JpaRepository<Pedido, Integer> {
     Pedido buscarPedido(int id_pedido);
 
 }
+

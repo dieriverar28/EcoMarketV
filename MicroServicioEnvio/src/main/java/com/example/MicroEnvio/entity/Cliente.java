@@ -1,4 +1,4 @@
-package com.example.MicroEnvio.model;
+package com.example.MicroEnvio.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
@@ -38,3 +38,4 @@ public class Cliente {
     @Column(name = "id_comuna", nullable = false)
     private int comuna;
 }
+

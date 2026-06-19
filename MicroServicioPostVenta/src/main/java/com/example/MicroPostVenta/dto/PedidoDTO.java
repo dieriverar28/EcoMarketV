@@ -2,8 +2,8 @@ package com.example.MicroPostVenta.dto;
 
 import java.sql.Date;
 
-import com.example.MicroPostVenta.model.Cliente;
-import com.example.MicroPostVenta.model.CuponDescuento;
+import com.example.MicroPostVenta.entity.Cliente;
+import com.example.MicroPostVenta.entity.CuponDescuento;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -34,3 +34,4 @@ public class PedidoDTO {
 
     }
 }
+

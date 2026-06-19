@@ -2,7 +2,7 @@ package com.example.MicroPostVenta.service;
 
 import java.util.List;
 
-import com.example.MicroPostVenta.model.CuponDescuento;
+import com.example.MicroPostVenta.entity.CuponDescuento;
 
 public interface CuponDescuentoService {
     List<CuponDescuento> obtenerCuponDescuentos();
@@ -16,3 +16,4 @@ public interface CuponDescuentoService {
     int eliminarCuponDescuento(int id_cupon_descuento);
 
 }
+

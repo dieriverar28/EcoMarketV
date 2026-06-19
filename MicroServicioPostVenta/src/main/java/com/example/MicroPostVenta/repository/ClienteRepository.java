@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 
-import com.example.MicroPostVenta.model.Cliente;
+import com.example.MicroPostVenta.entity.Cliente;
 
 
 public interface ClienteRepository extends JpaRepository<Cliente, Integer> {

@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import com.example.MicroPostVenta.model.Venta;
+import com.example.MicroPostVenta.entity.Venta;
 
-//import com.example.EcoMarketSPA.model.Venta;
+//import com.example.EcoMarketSPA.entity.Venta;
 
 public interface VentaRepository extends JpaRepository<Venta, Integer> {
     @Query("SELECT v FROM Venta v")
@@ -17,3 +17,4 @@ public interface VentaRepository extends JpaRepository<Venta, Integer> {
     Venta buscarVenta(int id_venta);
 
 }
+

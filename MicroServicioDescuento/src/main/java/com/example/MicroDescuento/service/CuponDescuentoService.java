@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.MicroDescuento.model.CuponDescuento;
+import com.example.MicroDescuento.entity.CuponDescuento;
 import com.example.MicroDescuento.repository.CuponDescuentoRepository;
 
 import jakarta.transaction.Transactional;
@@ -58,3 +58,4 @@ public class CuponDescuentoService {
     }
     
 }
+

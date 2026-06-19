@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.example.MicroVenta.model.Venta;
+import com.example.MicroVenta.entity.Venta;
 
 @Repository
 public interface VentaRepository extends JpaRepository<Venta, Integer>{
@@ -17,3 +17,4 @@ public interface VentaRepository extends JpaRepository<Venta, Integer>{
     Venta buscarVenta(int id_venta);
 
 }
+

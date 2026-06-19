@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 
 import com.example.MicroUsuarioSeguridad.dto.UsuarioDTO;
-import com.example.MicroUsuarioSeguridad.model.Usuario;
+import com.example.MicroUsuarioSeguridad.entity.Usuario;
 import com.example.MicroUsuarioSeguridad.repository.UsuarioRepository;
 import com.example.MicroUsuarioSeguridad.service.UsuarioService;
 

@@ -1,4 +1,4 @@
-package com.example.MicroEnvio.model;
+package com.example.MicroEnvio.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -42,3 +42,4 @@ public class Venta {
     @Column(name = "tipo_documento", length = 50)
     private String tipo_documento;
 }
+

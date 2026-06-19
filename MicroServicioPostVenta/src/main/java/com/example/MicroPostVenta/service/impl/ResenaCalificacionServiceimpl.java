@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import jakarta.transaction.Transactional;
 
-import com.example.MicroPostVenta.model.ResenaCalificacion;
+import com.example.MicroPostVenta.entity.ResenaCalificacion;
 import com.example.MicroPostVenta.repository.ResenaCalificacionRepository;
 import com.example.MicroPostVenta.service.ResenaCalificacionService;
 
@@ -55,3 +55,4 @@ public class ResenaCalificacionServiceimpl implements ResenaCalificacionService 
         return 0;
     }
 }
+

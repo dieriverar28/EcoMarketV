@@ -2,7 +2,7 @@ package com.example.MicroPostVenta.service;
 
 import java.util.List;
 
-import com.example.MicroPostVenta.model.Pedido;
+import com.example.MicroPostVenta.entity.Pedido;
 
 public interface PedidoService {
 
@@ -16,3 +16,4 @@ public interface PedidoService {
 
     int deletePedido(int id_pedido);
 }
+

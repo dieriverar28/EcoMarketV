@@ -2,7 +2,7 @@ package com.example.MicroUsuarioSeguridad.service.impl;
 
 import java.util.List;
 import org.springframework.stereotype.Service;
-import com.example.MicroUsuarioSeguridad.model.RolPermiso;
+import com.example.MicroUsuarioSeguridad.entity.RolPermiso;
 import com.example.MicroUsuarioSeguridad.repository.RolPermisoRepository; // Ajusta según tu repo
 import com.example.MicroUsuarioSeguridad.service.RolPermisoService;
 import lombok.RequiredArgsConstructor;

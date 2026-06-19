@@ -1,4 +1,4 @@
-package com.example.MicroPedido.model;
+package com.example.MicroPedido.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -11,8 +11,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "producto")
-
+@Table(name = "produto")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

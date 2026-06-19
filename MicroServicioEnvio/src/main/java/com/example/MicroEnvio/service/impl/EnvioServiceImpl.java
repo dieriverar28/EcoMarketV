@@ -1,7 +1,7 @@
 package com.example.MicroEnvio.service.impl;
 
 import com.example.MicroEnvio.dto.EnvioDTO;
-import com.example.MicroEnvio.model.*;
+import com.example.MicroEnvio.entity.*;
 import com.example.MicroEnvio.repository.*;
 import com.example.MicroEnvio.service.EnvioService;
 import lombok.RequiredArgsConstructor;
@@ -122,3 +122,4 @@ public class EnvioServiceImpl implements EnvioService {
                 e.getFecha_entrega_est());
     }
 }
+

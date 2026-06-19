@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.example.MicroPedido.model.CuponDescuento;
+import com.example.MicroPedido.entity.CuponDescuento;
 
 @Repository
 public interface CuponDescuentoRepository extends JpaRepository<CuponDescuento, Integer> {

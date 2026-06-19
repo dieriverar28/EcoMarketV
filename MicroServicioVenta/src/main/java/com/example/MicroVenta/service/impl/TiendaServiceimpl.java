@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.MicroVenta.model.Tienda;
+import com.example.MicroVenta.entity.Tienda;
 import com.example.MicroVenta.repository.TiendaRepository;
 import com.example.MicroVenta.service.TiendaService;
 
@@ -57,3 +57,4 @@ public class TiendaServiceimpl implements TiendaService {
         tiendaRepository.deleteById(id);
     }
 }
+

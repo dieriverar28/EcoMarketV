@@ -1,4 +1,4 @@
-package com.example.MicroEnvio.model;
+package com.example.MicroEnvio.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -24,3 +24,4 @@ public class RutaEntrega {
     @Column(name = "descripcion", nullable = false, length = 255)
     private String descripcion;
 }
+

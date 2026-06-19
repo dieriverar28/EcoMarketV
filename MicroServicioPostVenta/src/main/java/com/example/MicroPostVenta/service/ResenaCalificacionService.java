@@ -2,7 +2,7 @@ package com.example.MicroPostVenta.service;
 
 import java.util.List;
 
-import com.example.MicroPostVenta.model.ResenaCalificacion;
+import com.example.MicroPostVenta.entity.ResenaCalificacion;
 
 public interface ResenaCalificacionService {
 
@@ -16,3 +16,4 @@ public interface ResenaCalificacionService {
 
     int deleteResenaCalificacion(int id_resena_calificacion);
 }
+

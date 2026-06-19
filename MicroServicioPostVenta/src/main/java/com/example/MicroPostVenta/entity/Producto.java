@@ -1,4 +1,4 @@
-package com.example.MicroPostVenta.model;
+package com.example.MicroPostVenta.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -36,3 +36,4 @@ public class Producto {
     private boolean estado;
 
 }
+

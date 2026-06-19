@@ -1,7 +1,7 @@
 package com.example.MicroEnvio.service.impl;
 
 import com.example.MicroEnvio.dto.RutaEntregaDTO;
-import com.example.MicroEnvio.model.RutaEntrega;
+import com.example.MicroEnvio.entity.RutaEntrega;
 import com.example.MicroEnvio.repository.RutaEntregaRepository;
 import com.example.MicroEnvio.service.RutaEntregaService;
 import lombok.RequiredArgsConstructor;
@@ -62,3 +62,4 @@ public class RutaEntregaServiceImpl implements RutaEntregaService {
         return new RutaEntregaDTO.Response(r.getId(), r.getDescripcion());
     }
 }
+

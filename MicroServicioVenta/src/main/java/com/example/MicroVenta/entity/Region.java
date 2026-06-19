@@ -1,4 +1,4 @@
-package com.example.MicroVenta.model;
+package com.example.MicroVenta.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -8,20 +8,18 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 @Entity //se conecta con entidad
-@Table(name="comuna") //a tabla nombre persona
+@Table(name="region") //la tabla nombre persona
 @Data //antes de data ahora va lo de arriba
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class Comuna {
+public class Region {
     @Id
-    private int id_comuna;
+    private int id_region;
     @Column(name="nombre", nullable =false)
     private String nombre;
-    public int getId() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getId'");
-    }
 
 }
+

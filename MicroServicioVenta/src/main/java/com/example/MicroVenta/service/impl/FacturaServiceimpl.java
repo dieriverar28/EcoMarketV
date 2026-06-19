@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.MicroVenta.model.Factura;
+import com.example.MicroVenta.entity.Factura;
 import com.example.MicroVenta.repository.FacturaRepository;
 import com.example.MicroVenta.service.FacturaService;
 
@@ -89,3 +89,4 @@ public class FacturaServiceimpl implements FacturaService {
         return 1;
     }
 }
+

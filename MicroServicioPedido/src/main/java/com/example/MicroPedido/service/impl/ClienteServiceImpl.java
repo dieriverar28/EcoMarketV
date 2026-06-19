@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.MicroPedido.dto.ClienteDTO;
-import com.example.MicroPedido.model.Cliente;
+import com.example.MicroPedido.entity.Cliente;
 import com.example.MicroPedido.repository.ClienteRepository;
 import com.example.MicroPedido.service.ClienteService;
 

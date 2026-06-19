@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import jakarta.transaction.Transactional;
 
-import com.example.MicroPostVenta.model.DevolucionReclamo;
+import com.example.MicroPostVenta.entity.DevolucionReclamo;
 import com.example.MicroPostVenta.repository.DevolucionReclamoRepository;
 import com.example.MicroPostVenta.service.DevolucionReclamoService;
 
@@ -47,3 +47,4 @@ public class DevolucionReclamoServiceimpl implements DevolucionReclamoService {
         return 0;
     }
 }
+

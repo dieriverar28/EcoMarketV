@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.MicroPostVenta.dto.ClienteDTO;
-import com.example.MicroPostVenta.model.Tienda;
+import com.example.MicroPostVenta.entity.Tienda;
 import com.example.MicroPostVenta.service.TiendaService;
 
 import io.swagger.v3.oas.annotations.Operation;
@@ -82,3 +82,4 @@ public class TiendaController {
     }
 
 }
+

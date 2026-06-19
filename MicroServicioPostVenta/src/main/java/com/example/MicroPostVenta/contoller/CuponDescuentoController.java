@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import com.example.MicroPostVenta.model.CuponDescuento;
+import com.example.MicroPostVenta.entity.CuponDescuento;
 import com.example.MicroPostVenta.service.CuponDescuentoService;
 
 import io.swagger.v3.oas.annotations.Operation;
@@ -78,3 +78,4 @@ public class CuponDescuentoController {
     }
 
 }
+

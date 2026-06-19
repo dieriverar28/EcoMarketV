@@ -1,4 +1,4 @@
-package com.example.MicroPostVenta.model;
+package com.example.MicroPostVenta.entity;
 
 import java.sql.Date;
 
@@ -27,3 +27,4 @@ public class CuponDescuento {
     private boolean activo;
 
 }
+

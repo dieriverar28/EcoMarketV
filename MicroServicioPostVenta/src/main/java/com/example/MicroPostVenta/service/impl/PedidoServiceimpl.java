@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import jakarta.transaction.Transactional;
 
-import com.example.MicroPostVenta.model.Pedido;
+import com.example.MicroPostVenta.entity.Pedido;
 import com.example.MicroPostVenta.repository.PedidoRepository;
 import com.example.MicroPostVenta.service.PedidoService;
 
@@ -51,3 +51,4 @@ public class PedidoServiceimpl implements PedidoService {
         return 0;
     }
 }
+

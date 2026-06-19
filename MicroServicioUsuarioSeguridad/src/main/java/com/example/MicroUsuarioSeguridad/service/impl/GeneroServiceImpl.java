@@ -2,7 +2,7 @@ package com.example.MicroUsuarioSeguridad.service.impl;
 
 
 import com.example.MicroUsuarioSeguridad.dto.GeneroDTO;
-import com.example.MicroUsuarioSeguridad.model.Genero;
+import com.example.MicroUsuarioSeguridad.entity.Genero;
 import com.example.MicroUsuarioSeguridad.repository.GeneroRepository;
 import com.example.MicroUsuarioSeguridad.service.GeneroService;
 import lombok.RequiredArgsConstructor;

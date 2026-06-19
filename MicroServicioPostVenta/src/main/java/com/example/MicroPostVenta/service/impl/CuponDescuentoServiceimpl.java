@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import jakarta.transaction.Transactional;
 
-import com.example.MicroPostVenta.model.CuponDescuento;
+import com.example.MicroPostVenta.entity.CuponDescuento;
 import com.example.MicroPostVenta.repository.CuponDescuentoRepository;
 import com.example.MicroPostVenta.service.CuponDescuentoService;
 
@@ -46,3 +46,4 @@ public class CuponDescuentoServiceimpl implements CuponDescuentoService {
         return 0;
     }
 }
+

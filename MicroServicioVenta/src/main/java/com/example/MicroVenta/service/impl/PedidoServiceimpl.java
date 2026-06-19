@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.MicroVenta.model.Pedido;
+import com.example.MicroVenta.entity.Pedido;
 import com.example.MicroVenta.repository.PedidoRepository;
 import com.example.MicroVenta.service.PedidoService;
 
@@ -76,3 +76,4 @@ public class PedidoServiceimpl implements PedidoService {
         return id_pedido;
     }
 }
+

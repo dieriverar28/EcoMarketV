@@ -1,7 +1,7 @@
 package com.example.MicroUsuarioSeguridad.service;
 
 import java.util.List;
-import com.example.MicroUsuarioSeguridad.model.RolPermiso;
+import com.example.MicroUsuarioSeguridad.entity.RolPermiso;
 
 public interface RolPermisoService {
     List<RolPermiso> listar();

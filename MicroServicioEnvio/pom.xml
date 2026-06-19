@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>MicroProducto</artifactId>
+	<artifactId>MicroEnvio</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name/>
+	<name>MicroEnvio</name>
 	<description/>
 	<url/>
 	<licenses>
@@ -109,4 +109,13 @@
 		</dependencies>
 	</dependencyManagement>
 
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
 </project>

@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.example.MicroVenta.model.Boleta;
+import com.example.MicroVenta.entity.Boleta;
 
 @Repository
 public interface BoletaRepository extends JpaRepository<Boleta, Integer>{
@@ -17,3 +17,4 @@ public interface BoletaRepository extends JpaRepository<Boleta, Integer>{
     @Query("SELECT b FROM Boleta b WHERE b.id_cliente = :id_cliente")
     Boleta buscarBoleta(int id_cliente);
 }
+

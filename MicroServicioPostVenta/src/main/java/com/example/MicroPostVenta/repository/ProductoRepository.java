@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 
-import com.example.MicroPostVenta.model.Producto;
+import com.example.MicroPostVenta.entity.Producto;
 
 
 
@@ -20,3 +20,4 @@ public interface ProductoRepository extends JpaRepository<Producto, Integer> {
 
 
 }
+

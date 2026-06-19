@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.MicroPedido.model.CuponDescuento;
+import com.example.MicroPedido.entity.CuponDescuento;
 import com.example.MicroPedido.repository.CuponDescuentoRepository;
 import com.example.MicroPedido.service.CuponDescuentoService;
 

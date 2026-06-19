@@ -1,4 +1,4 @@
-package com.example.MicroEnvio.model;
+package com.example.MicroEnvio.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -47,3 +47,4 @@ public class Envio {
     @Column(name = "fecha_entrega_est", nullable = false)
     private Date fecha_entrega_est;
 }
+

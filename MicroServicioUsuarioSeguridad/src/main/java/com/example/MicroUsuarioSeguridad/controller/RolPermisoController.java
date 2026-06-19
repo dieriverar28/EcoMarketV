@@ -7,7 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.example.MicroUsuarioSeguridad.model.RolPermiso;
+import com.example.MicroUsuarioSeguridad.entity.RolPermiso;
 import com.example.MicroUsuarioSeguridad.service.RolPermisoService;
 
 import io.swagger.v3.oas.annotations.Operation;

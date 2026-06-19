@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.example.MicroVenta.model.Factura;
+import com.example.MicroVenta.entity.Factura;
 
 @Repository
 public interface FacturaRepository extends JpaRepository<Factura, Integer>{
@@ -16,3 +16,4 @@ public interface FacturaRepository extends JpaRepository<Factura, Integer>{
     @Query("SELECT f FROM Factura f WHERE f.id_factura = :id_factura")
     Factura buscarFactura(int id_factura);
 }
+

@@ -1,7 +1,7 @@
 package com.example.MicroPostVenta.dto;
 
-import com.example.MicroPostVenta.model.Cliente;
-import com.example.MicroPostVenta.model.Producto;
+import com.example.MicroPostVenta.entity.Cliente;
+import com.example.MicroPostVenta.entity.Producto;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -46,3 +46,4 @@ public class ResenaCalificacionDTO {
     }
 
 }
+

@@ -1,6 +1,6 @@
 package com.example.MicroEnvio.repository;
 
-import com.example.MicroEnvio.model.Cliente;
+import com.example.MicroEnvio.entity.Cliente;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -8,3 +8,4 @@ import org.springframework.stereotype.Repository;
 public interface ClienteRepository extends JpaRepository<Cliente, Integer> {
     boolean existsByEmail(String email);
 }
+

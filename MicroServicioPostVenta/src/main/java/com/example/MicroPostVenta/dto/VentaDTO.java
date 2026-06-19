@@ -7,9 +7,9 @@ import lombok.NoArgsConstructor;
 
 import java.sql.Date;
 
-import com.example.MicroPostVenta.model.Cliente;
-import com.example.MicroPostVenta.model.Pedido;
-import com.example.MicroPostVenta.model.Tienda;
+import com.example.MicroPostVenta.entity.Cliente;
+import com.example.MicroPostVenta.entity.Pedido;
+import com.example.MicroPostVenta.entity.Tienda;
 
 public class VentaDTO {
 
@@ -60,3 +60,4 @@ public class VentaDTO {
     }
 
 }
+
