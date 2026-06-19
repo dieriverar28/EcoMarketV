@@ -16,9 +16,10 @@ services:
       interval: 5s
       timeout: 5s
       retries: 10
-      start_period: 90s
+      start_period: 300s
     volumes:
       - ecomarket-mysql-data:/var/lib/mysql
+    mem_limit: 768m
     restart: unless-stopped
 
   # ===================== EUREKA SERVER =====================
@@ -29,6 +30,8 @@ services:
       - "8761:8761"
     environment:
       SPRING_PROFILES_ACTIVE: "docker"
+      JAVA_TOOL_OPTIONS: "-Xmx256m -Xms128m"
+    mem_limit: 384m
     restart: unless-stopped
 
   # ===================== MICROSERVICIOS =====================
@@ -38,13 +41,15 @@ services:
     ports:
       - "8081:8081"
     environment:
-      SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3307/db_ecomarket?allowPublicKeyRetrieval=true&useSSL=false"
+      SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3306/db_ecomarket?allowPublicKeyRetrieval=true&useSSL=false"
       SPRING_DATASOURCE_USERNAME: "admin"
       SPRING_DATASOURCE_PASSWORD: "admin123"
       SPRING_PROFILES_ACTIVE: "docker"
       SPRING_JPA_HIBERNATE_DDL_AUTO: "update"
       EUREKA_CLIENT_ENABLED: "true"
       EUREKA_URL: "http://ms-eureka:8761/eureka"
+      JAVA_TOOL_OPTIONS: "-Xmx256m -Xms128m"
+    mem_limit: 384m
     depends_on:
       mysql:
         condition: service_healthy
@@ -58,13 +63,15 @@ services:
     ports:
       - "8082:8082"
     environment:
-      SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3307/db_ecomarket?allowPublicKeyRetrieval=true&useSSL=false"
+      SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3306/db_ecomarket?allowPublicKeyRetrieval=true&useSSL=false"
       SPRING_DATASOURCE_USERNAME: "admin"
       SPRING_DATASOURCE_PASSWORD: "admin123"
       SPRING_PROFILES_ACTIVE: "docker"
       SPRING_JPA_HIBERNATE_DDL_AUTO: "update"
       EUREKA_CLIENT_ENABLED: "true"
       EUREKA_URL: "http://ms-eureka:8761/eureka"
+      JAVA_TOOL_OPTIONS: "-Xmx256m -Xms128m"
+    mem_limit: 384m
     depends_on:
       mysql:
         condition: service_healthy
@@ -78,13 +85,15 @@ services:
     ports:
       - "8083:8083"
     environment:
-      SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3307/db_ecomarket?allowPublicKeyRetrieval=true&useSSL=false"
+      SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3306/db_ecomarket?allowPublicKeyRetrieval=true&useSSL=false"
       SPRING_DATASOURCE_USERNAME: "admin"
       SPRING_DATASOURCE_PASSWORD: "admin123"
       SPRING_PROFILES_ACTIVE: "docker"
       SPRING_JPA_HIBERNATE_DDL_AUTO: "update"
       EUREKA_CLIENT_ENABLED: "true"
       EUREKA_URL: "http://ms-eureka:8761/eureka"
+      JAVA_TOOL_OPTIONS: "-Xmx256m -Xms128m"
+    mem_limit: 384m
     depends_on:
       mysql:
         condition: service_healthy
@@ -98,13 +107,15 @@ services:
     ports:
       - "8084:8084"
     environment:
-      SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3307/db_ecomarket?allowPublicKeyRetrieval=true&useSSL=false"
+      SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3306/db_ecomarket?allowPublicKeyRetrieval=true&useSSL=false"
       SPRING_DATASOURCE_USERNAME: "admin"
       SPRING_DATASOURCE_PASSWORD: "admin123"
       SPRING_PROFILES_ACTIVE: "docker"
       SPRING_JPA_HIBERNATE_DDL_AUTO: "update"
       EUREKA_CLIENT_ENABLED: "true"
       EUREKA_URL: "http://ms-eureka:8761/eureka"
+      JAVA_TOOL_OPTIONS: "-Xmx256m -Xms128m"
+    mem_limit: 384m
     depends_on:
       mysql:
         condition: service_healthy
@@ -118,13 +129,15 @@ services:
     ports:
       - "8085:8085"
     environment:
-      SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3307/db_ecomarket?allowPublicKeyRetrieval=true&useSSL=false"
+      SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3306/db_ecomarket?allowPublicKeyRetrieval=true&useSSL=false"
       SPRING_DATASOURCE_USERNAME: "admin"
       SPRING_DATASOURCE_PASSWORD: "admin123"
       SPRING_PROFILES_ACTIVE: "docker"
       SPRING_JPA_HIBERNATE_DDL_AUTO: "update"
       EUREKA_CLIENT_ENABLED: "true"
       EUREKA_URL: "http://ms-eureka:8761/eureka"
+      JAVA_TOOL_OPTIONS: "-Xmx256m -Xms128m"
+    mem_limit: 384m
     depends_on:
       mysql:
         condition: service_healthy
@@ -138,13 +151,15 @@ services:
     ports:
       - "8086:8086"
     environment:
-      SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3307/db_ecomarket?allowPublicKeyRetrieval=true&useSSL=false"
+      SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3306/db_ecomarket?allowPublicKeyRetrieval=true&useSSL=false"
       SPRING_DATASOURCE_USERNAME: "admin"
       SPRING_DATASOURCE_PASSWORD: "admin123"
       SPRING_PROFILES_ACTIVE: "docker"
       SPRING_JPA_HIBERNATE_DDL_AUTO: "update"
       EUREKA_CLIENT_ENABLED: "true"
       EUREKA_URL: "http://ms-eureka:8761/eureka"
+      JAVA_TOOL_OPTIONS: "-Xmx256m -Xms128m"
+    mem_limit: 384m
     depends_on:
       mysql:
         condition: service_healthy
@@ -158,13 +173,15 @@ services:
     ports:
       - "8087:8087"
     environment:
-      SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3307/db_ecomarket?allowPublicKeyRetrieval=true&useSSL=false"
+      SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3306/db_ecomarket?allowPublicKeyRetrieval=true&useSSL=false"
       SPRING_DATASOURCE_USERNAME: "admin"
       SPRING_DATASOURCE_PASSWORD: "admin123"
       SPRING_PROFILES_ACTIVE: "docker"
       SPRING_JPA_HIBERNATE_DDL_AUTO: "update"
       EUREKA_CLIENT_ENABLED: "true"
       EUREKA_URL: "http://ms-eureka:8761/eureka"
+      JAVA_TOOL_OPTIONS: "-Xmx256m -Xms128m"
+    mem_limit: 384m
     depends_on:
       mysql:
         condition: service_healthy
@@ -178,13 +195,15 @@ services:
     ports:
       - "8088:8088"
     environment:
-      SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3307/db_ecomarket?allowPublicKeyRetrieval=true&useSSL=false"
+      SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3306/db_ecomarket?allowPublicKeyRetrieval=true&useSSL=false"
       SPRING_DATASOURCE_USERNAME: "admin"
       SPRING_DATASOURCE_PASSWORD: "admin123"
       SPRING_PROFILES_ACTIVE: "docker"
       SPRING_JPA_HIBERNATE_DDL_AUTO: "update"
       EUREKA_CLIENT_ENABLED: "true"
       EUREKA_URL: "http://ms-eureka:8761/eureka"
+      JAVA_TOOL_OPTIONS: "-Xmx256m -Xms128m"
+    mem_limit: 384m
     depends_on:
       mysql:
         condition: service_healthy
@@ -198,13 +217,15 @@ services:
     ports:
       - "8089:8089"
     environment:
-      SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3307/db_ecomarket?allowPublicKeyRetrieval=true&useSSL=false"
+      SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3306/db_ecomarket?allowPublicKeyRetrieval=true&useSSL=false"
       SPRING_DATASOURCE_USERNAME: "admin"
       SPRING_DATASOURCE_PASSWORD: "admin123"
       SPRING_PROFILES_ACTIVE: "docker"
       SPRING_JPA_HIBERNATE_DDL_AUTO: "update"
       EUREKA_CLIENT_ENABLED: "true"
       EUREKA_URL: "http://ms-eureka:8761/eureka"
+      JAVA_TOOL_OPTIONS: "-Xmx256m -Xms128m"
+    mem_limit: 384m
     depends_on:
       mysql:
         condition: service_healthy
@@ -218,13 +239,15 @@ services:
     ports:
       - "8090:8090"
     environment:
-      SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3307/db_ecomarket?allowPublicKeyRetrieval=true&useSSL=false"
+      SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3306/db_ecomarket?allowPublicKeyRetrieval=true&useSSL=false"
       SPRING_DATASOURCE_USERNAME: "admin"
       SPRING_DATASOURCE_PASSWORD: "admin123"
       SPRING_PROFILES_ACTIVE: "docker"
       SPRING_JPA_HIBERNATE_DDL_AUTO: "update"
       EUREKA_CLIENT_ENABLED: "true"
       EUREKA_URL: "http://ms-eureka:8761/eureka"
+      JAVA_TOOL_OPTIONS: "-Xmx256m -Xms128m"
+    mem_limit: 384m
     depends_on:
       mysql:
         condition: service_healthy
