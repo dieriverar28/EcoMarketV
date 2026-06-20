@@ -1,0 +1,35 @@
+
+
+1.iniciar docker desktop y crear 
+base de datos en temrinal powershell de vsl code
+
+docker compose up mysql
+(debe dar mensaje en logs casi al final que dice "ready for connections")
+
+2. iniciar ms individualmente terminal pwshell de vsl code
+
+docker compose up ms-eureka
+------------------------------
+docker compose up ms-producto
+docker compose up ms-cliente
+docker compose up ms-usuario
+docker compose up ms-inventario
+docker compose up ms-venta
+docker compose up ms-pedido
+docker compose up ms-envio
+docker compose up ms-postventa
+docker compose up ms-descuento
+docker compose up ms-tienda
+
+3. estando creadas imagenes y contenedores (tambien en docker desktop) probar apis y endpoints
+
+http://localhost:8081/doc/swagger-ui/index.html
+http://localhost:8082/doc/swagger-ui/index.html
+http://localhost:8083/doc/swagger-ui/index.html
+http://localhost:8084/doc/swagger-ui/index.html
+http://localhost:8085/doc/swagger-ui/index.html
+http://localhost:8086/doc/swagger-ui/index.html
+http://localhost:8087/doc/swagger-ui/index.html
+http://localhost:8088/doc/swagger-ui/index.html
+http://localhost:8089/swagger-ui/index.html
+http://localhost:8090/doc/swagger-ui/index.html
