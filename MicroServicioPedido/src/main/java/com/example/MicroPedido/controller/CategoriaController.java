@@ -16,7 +16,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
-@RequestMapping("api/v2/categorias")
+@RequestMapping("api/v1/categorias")
 @Tag(name = "Categorías", description = "API para la gestión de categorías")
 public class CategoriaController {
 

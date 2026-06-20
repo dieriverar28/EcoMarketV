@@ -19,7 +19,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("api/v2/roles_permisos")
+@RequestMapping("api/v1/roles_permisos")
 @Tag(name = "Rol-Permiso Controller", description = "Endpoints para gestionar las relaciones entre roles y permisos")
 public class RolPermisoController {
 

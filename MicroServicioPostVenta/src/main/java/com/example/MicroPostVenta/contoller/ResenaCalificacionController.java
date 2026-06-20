@@ -26,7 +26,7 @@ import jakarta.validation.Valid;
 
 @SuppressWarnings("unused")
 @RestController
-@RequestMapping("api/v2/resenas_calificaciones")
+@RequestMapping("api/v1/resenas_calificaciones")
 @Tag(name = "ResenaCalificacion", description = "Operaciones relacionadas con reseñas y calificaciones")
 
 public class ResenaCalificacionController {

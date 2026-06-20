@@ -27,7 +27,7 @@ import jakarta.validation.Valid;
 @SuppressWarnings("unused")
 @RestController
 @Tag(name = "Pedido")
-@RequestMapping("api/v2/pedidos")
+@RequestMapping("api/v1/pedidos")
 public class PedidoController {
     @Autowired
     private PedidoService pedidoService;

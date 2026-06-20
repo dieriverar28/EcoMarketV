@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import com.example.MicroVenta.dto.ClienteDTO;
 import com.example.MicroVenta.entity.CuponDescuento;
 import com.example.MicroVenta.service.CuponDescuentoService;
 
@@ -19,7 +18,7 @@ import jakarta.validation.Valid;
 
 @RestController
 @Tag(name = "CuponDescuento")
-@RequestMapping("api/v2/cupones_descuento")
+@RequestMapping("api/v1/cupones_descuento")
 
 public class CuponDescuentoController {
 

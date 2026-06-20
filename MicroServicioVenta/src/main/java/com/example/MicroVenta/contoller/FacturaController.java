@@ -27,7 +27,7 @@ import jakarta.validation.Valid;
 @SuppressWarnings("unused")
 @RestController
 @Tag(name = "Factura")
-@RequestMapping("api/v2/facturas")
+@RequestMapping("api/v1/facturas")
 public class FacturaController {
     @Autowired
     private FacturaService facturaService;

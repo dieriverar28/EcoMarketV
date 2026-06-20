@@ -19,7 +19,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping("/api/usuarios")
+@RequestMapping("/api/v1/usuarios")
 @RequiredArgsConstructor
 @Tag(name = "Usuario Controller", description = "Endpoints para la gestión y seguridad de usuarios")
 public class UsuarioController {
