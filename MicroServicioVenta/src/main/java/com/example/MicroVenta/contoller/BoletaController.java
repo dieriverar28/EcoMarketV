@@ -29,7 +29,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 @SuppressWarnings("unused")
 @Tag(name = "Boleta")
 @RestController
-@RequestMapping("api/v2/boletas")
+@RequestMapping("api/v1/boletas")
 public class BoletaController {
     @Autowired
     private BoletaService boletaService;

@@ -26,7 +26,7 @@ import jakarta.validation.Valid;
 
 @SuppressWarnings("unused")
 @RestController
-@RequestMapping ("api/v2/tiendas")
+@RequestMapping ("api/v1/tiendas")
 @Tag(name = "Tienda", description = "Operaciones relacionadas con tiendas")
 
 public class TiendaController {

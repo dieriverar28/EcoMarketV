@@ -11,7 +11,7 @@ import com.example.MicroDescuento.service.CuponDescuentoService;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("api/v2/cupones_descuento")
+@RequestMapping("api/v1/cupones_descuento")
 
 public class CuponDescuentoController {
 

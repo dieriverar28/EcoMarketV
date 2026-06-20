@@ -17,7 +17,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("api/v2/cupones_descuento")
+@RequestMapping("api/v1/cupones_descuento")
 @Tag(name = "Cupones de Descuento", description = "API para la gestión de cupones de descuento")
 public class CuponDescuentoController {
 
