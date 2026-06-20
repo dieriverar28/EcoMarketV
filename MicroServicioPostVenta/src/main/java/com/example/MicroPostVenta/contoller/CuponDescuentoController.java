@@ -13,10 +13,13 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("api/v1/cupones_descuento")
+@Tag(name = "CuponDescuento", description = "Operaciones relacionadas con cupones de descuento")
+
 
 public class CuponDescuentoController {
 

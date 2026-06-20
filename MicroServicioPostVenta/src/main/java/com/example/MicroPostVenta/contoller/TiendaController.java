@@ -21,11 +21,14 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 
 @SuppressWarnings("unused")
 @RestController
 @RequestMapping ("api/v2/tiendas")
+@Tag(name = "Tienda", description = "Operaciones relacionadas con tiendas")
+
 public class TiendaController {
     @Autowired
     private TiendaService tiendaService;

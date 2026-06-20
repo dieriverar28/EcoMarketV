@@ -21,11 +21,14 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 
 @SuppressWarnings("unused")
 @RestController
 @RequestMapping("api/v2/resenas_calificaciones")
+@Tag(name = "ResenaCalificacion", description = "Operaciones relacionadas con reseñas y calificaciones")
+
 public class ResenaCalificacionController {
     @Autowired
     private ResenaCalificacionService resenaCalificacionService;
