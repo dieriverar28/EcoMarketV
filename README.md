@@ -33,3 +33,19 @@ http://localhost:8087/doc/swagger-ui/index.html
 http://localhost:8088/doc/swagger-ui/index.html
 http://localhost:8089/swagger-ui/index.html
 http://localhost:8090/doc/swagger-ui/index.html
+
+
+--muestra json con lista de registros guardados desde navegador swagger
+
+
+ms-usuario
+http://localhost:8081/api/v1/usuarios
+
+ms-cliente
+http://localhost:8082/api/v1/clientes
+
+ms-producto
+http://localhost:8083/api/v1/productos
+
+ms-inventario
+http://localhost:8084/api/v1/stock
