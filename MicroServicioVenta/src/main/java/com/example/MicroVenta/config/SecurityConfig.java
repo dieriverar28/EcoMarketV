@@ -1,4 +1,4 @@
-package com.example.MicroDescuento.config;
+package com.example.MicroVenta.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,7 +24,7 @@ public class SecurityConfig {
             .csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/actuator/**", "/doc/swagger-ui/**", "/v3/api-docs/**").permitAll()
-                .requestMatchers("/api/v1/descuentos", "/api/v1/descuentos/{id}").permitAll()
+                .requestMatchers("/api/v1/ventas", "/api/v1/ventas/{id}").permitAll()
                 .anyRequest().authenticated())
             .httpBasic(Customizer.withDefaults())
             .sessionManagement(session -> session

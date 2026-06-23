@@ -92,6 +92,9 @@ services:
       SPRING_JPA_HIBERNATE_DDL_AUTO: "update"
       EUREKA_CLIENT_ENABLED: "true"
       EUREKA_URL: "http://ms-eureka:8761/eureka"
+      EUREKA_INSTANCE_HOSTNAME: "ms-producto"
+      EUREKA_INSTANCE_NON_SECURE_PORT: "8083"
+      EUREKA_INSTANCE_PREFER_IP_ADDRESS: "false"
       JAVA_TOOL_OPTIONS: "-Xmx256m -Xms128m"
     mem_limit: 384m
     depends_on:
