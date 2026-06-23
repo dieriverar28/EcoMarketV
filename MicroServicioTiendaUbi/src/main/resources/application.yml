@@ -50,3 +50,7 @@ eureka:
       defaultZone: ${EUREKA_URL:http://ms-eureka:8761/eureka}
   instance:
     prefer-ip-address: true
+
+logging:
+  file:
+    name: ../logs/ms-tienda.log
