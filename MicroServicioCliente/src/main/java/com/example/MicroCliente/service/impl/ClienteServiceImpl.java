@@ -36,7 +36,6 @@ public class ClienteServiceImpl implements ClienteService {
 
     @Override
     public List<ClienteDTO.Response> listarClientesPorGenero(Integer id_genero) {
-        // Validar que el género existe antes de filtrar
         if (!generoRepository.existsById(id_genero)) {
             throw new RuntimeException("Género no encontrado con ID: " + id_genero);
         }
@@ -54,8 +53,9 @@ public class ClienteServiceImpl implements ClienteService {
         Cliente cliente = new Cliente();
         cliente.setNombre(request.getNombre());
         cliente.setTelefono(request.getTelefono());
-        cliente.setId_comuna(request.getId_comuna());
+        cliente.setComuna(request.getComuna());
         cliente.setDireccion_envio(request.getDireccion_envio());
+        cliente.setEmail(request.getEmail());
         cliente.setGenero(genero);
 
         return mapToResponse(clienteRepository.save(cliente));
@@ -71,8 +71,9 @@ public class ClienteServiceImpl implements ClienteService {
 
         cliente.setNombre(request.getNombre());
         cliente.setTelefono(request.getTelefono());
-        cliente.setId_comuna(request.getId_comuna());
+        cliente.setComuna(request.getComuna());
         cliente.setDireccion_envio(request.getDireccion_envio());
+        cliente.setEmail(request.getEmail());
         cliente.setGenero(genero);
 
         return mapToResponse(clienteRepository.save(cliente));
@@ -86,15 +87,15 @@ public class ClienteServiceImpl implements ClienteService {
         clienteRepository.deleteById(id_cliente);
     }
 
-    // ── Mapper ──────────────────────────────────────────────────────────────
     private ClienteDTO.Response mapToResponse(Cliente cliente) {
         return new ClienteDTO.Response(
                 cliente.getId_cliente(),
                 cliente.getNombre(),
                 cliente.getTelefono(),
-                cliente.getId_comuna(),
+                cliente.getComuna(),
                 cliente.getDireccion_envio(),
-                cliente.getGenero().getNombre_genero() // devuelve nombre legible
+                cliente.getEmail(),
+                cliente.getGenero().getNombre_genero()
         );
     }
 }

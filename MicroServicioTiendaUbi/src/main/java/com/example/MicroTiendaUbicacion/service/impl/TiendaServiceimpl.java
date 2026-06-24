@@ -44,10 +44,10 @@ public class TiendaServiceimpl implements TiendaService {
         tienda.setNombre(request.getNombre());
         tienda.setDireccion(request.getDireccion());
         tienda.setTelefono(request.getTelefono());
-        tienda.setIdComuna(request.getId_comuna());
-        tienda.setIdRegion(request.getId_region());
+        tienda.setComuna(request.getComuna());
+        tienda.setRegion(request.getRegion());
         tienda.setCodigo_postal(request.getCodigo_postal());
-        tienda.setActiva(request.getActiva());
+        tienda.setActiva(request.getActiva() != null ? request.getActiva() : true);
 
         return toResponse(repository.save(tienda));
     }
@@ -61,10 +61,10 @@ public class TiendaServiceimpl implements TiendaService {
         tienda.setNombre(request.getNombre());
         tienda.setDireccion(request.getDireccion());
         tienda.setTelefono(request.getTelefono());
-        tienda.setIdComuna(request.getId_comuna());
-        tienda.setIdRegion(request.getId_region());
+        tienda.setComuna(request.getComuna());
+        tienda.setRegion(request.getRegion());
         tienda.setCodigo_postal(request.getCodigo_postal());
-        tienda.setActiva(request.getActiva());
+        tienda.setActiva(request.getActiva() != null ? request.getActiva() : tienda.getActiva());
 
         return toResponse(repository.save(tienda));
     }
@@ -74,19 +74,19 @@ public class TiendaServiceimpl implements TiendaService {
         repository.deleteById(id);
     }
 
-private TiendaDTO.Response toResponse(Tienda tienda) {
+    private TiendaDTO.Response toResponse(Tienda tienda) {
 
-    return new TiendaDTO.Response(
-            tienda.getId_tienda(),
-            tienda.getNombre(),
-            tienda.getDireccion(),
-            tienda.getTelefono(),
-            tienda.getCodigo_postal(),
-            tienda.getActiva(),
-            tienda.getIdComuna(),
-            tienda.getIdRegion(),
-            null
-    );
+        return new TiendaDTO.Response(
+                tienda.getId_tienda(),
+                tienda.getNombre(),
+                tienda.getDireccion(),
+                tienda.getTelefono(),
+                tienda.getComuna(),
+                tienda.getRegion(),
+                tienda.getCodigo_postal(),
+                tienda.getActiva(),
+                null
+        );
     }
 
 }

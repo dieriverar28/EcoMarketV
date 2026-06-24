@@ -2,6 +2,8 @@ package com.example.MicroInventario.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -17,7 +19,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Tienda {
     @Id
-    private int id_tienda;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id_tienda;
 
     @Column(name="nombre", nullable=false)
     private String nombre;
@@ -25,9 +28,9 @@ public class Tienda {
     @Column(name="direccion", nullable=false)
     private String direccion;
 
-    @Column(name="id_comuna", nullable=false)
-    private int id_comuna;
+    @Column(name="comuna", nullable=false)
+    private String comuna;
     
-    @Column(name="id_region", nullable=false)
-    private int id_region;
+    @Column(name="region", nullable=false)
+    private String region;
 }

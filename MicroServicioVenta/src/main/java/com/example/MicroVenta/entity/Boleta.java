@@ -5,8 +5,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,7 +20,7 @@ public class Boleta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_cliente")
-    private int id_cliente;
+    private Integer id_cliente;
 
     @Column(name = "nombre", nullable = false)
     private String nombre;
@@ -33,11 +31,9 @@ public class Boleta {
     @Column(name = "telefono", nullable = false)
     private String telefono;
 
-    @Column(name = "id_comuna", nullable = false)
-    private int comuna;
+    @Column(name = "comuna", length = 100)
+    private String comuna;
 
+    @Column(name = "direccion_envio")
     private String direccion_envio;
-
-    @Column(name = "id_genero", nullable = false)
-    private int genero;
 }

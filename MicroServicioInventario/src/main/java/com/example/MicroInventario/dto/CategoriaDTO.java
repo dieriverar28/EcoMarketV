@@ -19,7 +19,7 @@ public class CategoriaDTO {
         private String nombre;
 
         @NotNull(message = "El estado es obligatorio")
-        private boolean estado;
+        private Boolean estado;
     }
 
     @Data
@@ -27,9 +27,9 @@ public class CategoriaDTO {
     @AllArgsConstructor
     public static class Response {
 
-        private int id_categoria;
+        private Integer id_categoria;
         private String nombre;
-        private boolean estado;
+        private Boolean estado;
     }
 
 }

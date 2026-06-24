@@ -1,8 +1,6 @@
 package com.example.MicroTiendaUbicacion.dto;
 
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,30 +14,21 @@ public class TiendaDTO {
     @AllArgsConstructor
     public static class Request {
 
-        // En creación el ID no es obligatorio (lo genera la BD)
         private Integer id_tienda;
 
         @NotBlank(message = "El nombre es obligatorio")
-        @Pattern(
-            regexp = "^[\\w\\sáéíóúÁÉÍÓÚñÑ]{2,}\\s+[\\w\\sáéíóúÁÉÍÓÚñÑ]{2,}.*$",
-            message = "El nombre debe contener al menos 2 palabras"
-        )
         private String nombre;
 
         @NotBlank(message = "La dirección es obligatoria")
-        @Pattern(
-            regexp = "^[\\w\\sáéíóúÁÉÍÓÚñÑ]{2,}\\s+[\\w\\sáéíóúÁÉÍÓÚñÑ]{2,}.*$",
-            message = "La dirección debe contener al menos 2 palabras"
-        )
         private String direccion;
 
         private String telefono;
 
-        @NotNull(message = "El id de la comuna es obligatorio")
-        private Integer id_comuna;
+        @NotBlank(message = "La comuna es obligatoria")
+        private String comuna;
 
-        @NotNull(message = "El id de la región es obligatorio")
-        private Integer id_region;
+        @NotBlank(message = "La región es obligatoria")
+        private String region;
 
         private String codigo_postal;
 
@@ -55,12 +44,10 @@ public class TiendaDTO {
         private String nombre;
         private String direccion;
         private String telefono;
+        private String comuna;
+        private String region;
         private String codigo_postal;
         private Boolean activa;
-        private Integer id_comuna;
-        private Integer id_region;
-
-        // Corregido
         private List<HorarioTiendaDTO.Response> horarios;
     }
 }

@@ -8,11 +8,11 @@ public interface ProductoService {
 
     List<Producto> getProductos();
 
-    Producto getProducto(int id_producto);
+    Producto getProducto(Long id_producto);
 
     Producto saveProducto(Producto producto);
 
     int updateProducto(Producto producto);
 
-    int deleteProducto(int id_producto);
+    int deleteProducto(Long id_producto);
 }

@@ -20,33 +20,28 @@ public class ProductoServiceImpl implements ProductoService {
 
     @Override
     public List<Producto> getProductos() {
-
         return productoRepository.findAll();
     }
 
     @Override
-    public Producto getProducto(int id_producto) {
-
+    public Producto getProducto(Long id_producto) {
         return productoRepository.findById(id_producto)
                 .orElse(new Producto());
     }
 
     @Override
     public Producto saveProducto(Producto producto) {
-
         return productoRepository.save(producto);
     }
 
     @Override
     public int updateProducto(Producto producto) {
-
         productoRepository.save(producto);
         return 1;
     }
 
     @Override
-    public int deleteProducto(int id_producto) {
-
+    public int deleteProducto(Long id_producto) {
         productoRepository.deleteById(id_producto);
         return 1;
     }
