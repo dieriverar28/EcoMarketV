@@ -23,10 +23,10 @@ public class TiendaDTO {
         private String direccion;
 
         @NotNull(message = "La comuna es obligatoria")
-        private int id_comuna;
+        private String comuna;
 
         @NotNull(message = "La region es obligatoria")
-        private int id_region;
+        private String region;
 
     
     }
@@ -36,10 +36,10 @@ public class TiendaDTO {
     @AllArgsConstructor
     public static class Response {
 
-        private int id_tienda;
+        private Integer id_tienda;
         private String nombre;
         private String direccion;
-        private int id_comuna;
-        private int id_region;
+        private String comuna;
+        private String region;
     }
 }

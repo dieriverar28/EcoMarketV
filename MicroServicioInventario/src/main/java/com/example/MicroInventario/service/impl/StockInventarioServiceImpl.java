@@ -34,10 +34,10 @@ public class StockInventarioServiceImpl implements StockInventarioService {
                 new StockInventarioDTO.Response(
                         stock.getId_stock(),
                         stock.getTienda().getId_tienda(),
-                        stock.getProducto().getId_producto(),
+                        stock.getProducto().getId(),
                         stock.getCantidad(),
                         stock.getStock_min(),
-                        stock.isEstado()
+                        stock.getEstado()
                 )
         ).collect(Collectors.toList());
     }
@@ -55,10 +55,10 @@ public class StockInventarioServiceImpl implements StockInventarioService {
         return new StockInventarioDTO.Response(
                 stock.getId_stock(),
                 stock.getTienda().getId_tienda(),
-                stock.getProducto().getId_producto(),
+                stock.getProducto().getId(),
                 stock.getCantidad(),
                 stock.getStock_min(),
-                stock.isEstado()
+                stock.getEstado()
         );
     }
 
@@ -86,10 +86,10 @@ public class StockInventarioServiceImpl implements StockInventarioService {
         return new StockInventarioDTO.Response(
                 guardado.getId_stock(),
                 guardado.getTienda().getId_tienda(),
-                guardado.getProducto().getId_producto(),
+                guardado.getProducto().getId(),
                 guardado.getCantidad(),
                 guardado.getStock_min(),
-                guardado.isEstado()
+                guardado.getEstado()
         );
     }
 
@@ -124,10 +124,10 @@ public class StockInventarioServiceImpl implements StockInventarioService {
         return new StockInventarioDTO.Response(
                 actualizado.getId_stock(),
                 actualizado.getTienda().getId_tienda(),
-                actualizado.getProducto().getId_producto(),
+                actualizado.getProducto().getId(),
                 actualizado.getCantidad(),
                 actualizado.getStock_min(),
-                actualizado.isEstado()
+                actualizado.getEstado()
         );
     }
 

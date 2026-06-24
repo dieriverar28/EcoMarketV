@@ -2,6 +2,8 @@ package com.example.MicroInventario.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -19,7 +21,8 @@ import lombok.Setter;
 @Setter
 public class StockInventario {
     @Id
-    private int id_stock;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id_stock;
 
     @ManyToOne
     @JoinColumn(name="id_tienda", nullable=false)
@@ -30,12 +33,12 @@ public class StockInventario {
     private Producto producto;
 
     @Column(name="cantidad", nullable=false)
-    private int cantidad;
+    private Integer cantidad;
 
     @Column(name="stock_min")
-    private int stock_min;
+    private Integer stock_min;
 
     @Column(name = "estado", nullable = false)
-    private boolean estado;
+    private Boolean estado;
 
 }

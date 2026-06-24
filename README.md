@@ -49,3 +49,4 @@ http://localhost:8083/api/v1/productos
 
 ms-inventario
 http://localhost:8084/api/v1/stock
+

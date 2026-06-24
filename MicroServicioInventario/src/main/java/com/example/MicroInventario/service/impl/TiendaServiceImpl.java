@@ -25,8 +25,8 @@ public class TiendaServiceImpl implements TiendaService {
                         tienda.getId_tienda(),
                         tienda.getNombre(),
                         tienda.getDireccion(),
-                        tienda.getId_comuna(),
-                        tienda.getId_region()
+                        tienda.getComuna(),
+                        tienda.getRegion()
                 )
         ).collect(Collectors.toList());
     }
@@ -44,8 +44,8 @@ public class TiendaServiceImpl implements TiendaService {
                 tienda.getId_tienda(),
                 tienda.getNombre(),
                 tienda.getDireccion(),
-                tienda.getId_comuna(),
-                tienda.getId_region()
+                tienda.getComuna(),
+                tienda.getRegion()
         );
     }
 
@@ -56,8 +56,8 @@ public class TiendaServiceImpl implements TiendaService {
 
         tienda.setNombre(request.getNombre());
         tienda.setDireccion(request.getDireccion());
-        tienda.setId_comuna(request.getId_comuna());
-        tienda.setId_region(request.getId_region());
+        tienda.setComuna(request.getComuna());
+        tienda.setRegion(request.getRegion());
 
         Tienda guardada = tiendaRepository.save(tienda);
 
@@ -65,8 +65,8 @@ public class TiendaServiceImpl implements TiendaService {
                 guardada.getId_tienda(),
                 guardada.getNombre(),
                 guardada.getDireccion(),
-                guardada.getId_comuna(),
-                guardada.getId_region()
+                guardada.getComuna(),
+                guardada.getRegion()
         );
     }
 
@@ -81,8 +81,8 @@ public class TiendaServiceImpl implements TiendaService {
 
         tienda.setNombre(request.getNombre());
         tienda.setDireccion(request.getDireccion());
-        tienda.setId_comuna(request.getId_comuna());
-        tienda.setId_region(request.getId_region());
+        tienda.setComuna(request.getComuna());
+        tienda.setRegion(request.getRegion());
 
         Tienda actualizada = tiendaRepository.save(tienda);
 
@@ -90,8 +90,8 @@ public class TiendaServiceImpl implements TiendaService {
                 actualizada.getId_tienda(),
                 actualizada.getNombre(),
                 actualizada.getDireccion(),
-                actualizada.getId_comuna(),
-                actualizada.getId_region()
+                actualizada.getComuna(),
+                actualizada.getRegion()
         );
     }
 

@@ -22,11 +22,14 @@ public class Cliente {
     @Column(name = "telefono", nullable = false)
     private String telefono;
 
-    @Column(name = "id_comuna", nullable = false)
-    private Integer id_comuna;
+    @Column(name = "comuna", nullable = false, length = 100)
+    private String comuna;
 
     @Column(name = "direccion_envio")
     private String direccion_envio;
+
+    @Column(name = "email", nullable = false)
+    private String email;
 
     @ManyToOne
     @JoinColumn(name = "id_genero", nullable = false)

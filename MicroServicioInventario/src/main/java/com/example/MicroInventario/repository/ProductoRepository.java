@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.example.MicroInventario.entity.Producto;
 
 @Repository
-public interface ProductoRepository extends JpaRepository<Producto, Integer> {
+public interface ProductoRepository extends JpaRepository<Producto, Long> {
 
     List<Producto> findByCategoria_Nombre(String nombre);
 

@@ -13,9 +13,10 @@ public interface TiendaRepository extends JpaRepository<Tienda, Integer> {
     List<Tienda> findByActivaTrue();
 
     List<Tienda> findByNombreContainingIgnoreCase(String nombre);
-        List<Tienda> findByIdRegion(Integer idRegion);
 
-    List<Tienda> findByIdComuna(Integer idComuna);
+    List<Tienda> findByRegion(String region);
 
-    List<Tienda> findByIdRegionAndActivaTrue(Integer idRegion);
+    List<Tienda> findByComuna(String comuna);
+
+    List<Tienda> findByRegionAndActivaTrue(String region);
 }

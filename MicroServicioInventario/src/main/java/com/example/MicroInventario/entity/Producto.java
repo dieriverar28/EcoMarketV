@@ -14,6 +14,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 @Entity
 @Table(name = "producto")
 @Data
@@ -23,7 +24,8 @@ public class Producto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_producto;
+    private Long id;
+
     @Column(name = "nombre", nullable = false, length = 100)
     private String nombre;
 
@@ -41,4 +43,9 @@ public class Producto {
 
     @Column(name = "estado", nullable = false)
     private boolean estado = true;
+
+    public void setId_producto(int id_producto) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setId_producto'");
+    }
 }

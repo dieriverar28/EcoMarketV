@@ -22,9 +22,9 @@ public class ProductoDTO {
         private String categoria;
 
         @Min(value = 0, message = "El precio base no puede ser negativo")
-        private int precio_base;
+        private Integer precio_base;
 
-        private boolean estado;
+        private Boolean estado;
     }
 
     @Data
@@ -35,7 +35,7 @@ public class ProductoDTO {
         private String nombre;
         private String descripcion;
         private String categoria;
-        private int precio_base;
-        private boolean estado;
+        private Integer precio_base;
+        private Boolean estado;
     }
 }
