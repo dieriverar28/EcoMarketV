@@ -36,7 +36,7 @@ http://localhost:8090/doc/swagger-ui/index.html
 
 
 --muestra json con lista de registros guardados desde navegador swagger
-
+--levantar eureka y docker por separado
 
 ms-usuario
 http://localhost:8081/api/v1/usuarios

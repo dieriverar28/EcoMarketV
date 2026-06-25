@@ -9,5 +9,5 @@ class MicroProductoApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
+//integrar puebas automatizadas con mokito o junit
 }
