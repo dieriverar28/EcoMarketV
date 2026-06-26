@@ -214,27 +214,28 @@ services:
         condition: service_started
     restart: unless-stopped
 
-  ms-descuento:
-    build: ./MicroServicioDescuento
-    container_name: ms-descuento
-    ports:
-      - "8089:8089"
-    environment:
-      SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3306/db_ecomarket?allowPublicKeyRetrieval=true&useSSL=false"
-      SPRING_DATASOURCE_USERNAME: "admin"
-      SPRING_DATASOURCE_PASSWORD: "admin123"
-      SPRING_PROFILES_ACTIVE: "docker"
-      SPRING_JPA_HIBERNATE_DDL_AUTO: "update"
-      EUREKA_CLIENT_ENABLED: "true"
-      EUREKA_URL: "http://ms-eureka:8761/eureka"
-      JAVA_TOOL_OPTIONS: "-Xmx256m -Xms128m"
-    mem_limit: 384m
-    depends_on:
-      mysql:
-        condition: service_healthy
-      ms-eureka:
-        condition: service_started
-    restart: unless-stopped
+        
+#  ms-descuento:
+#    build: ./MicroServicioDescuento
+#    container_name: ms-descuento
+#    ports:
+#      - "8089:8089"
+#    environment:
+#      SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3306/db_ecomarket?allowPublicKeyRetrieval=true&useSSL=false"
+#      SPRING_DATASOURCE_USERNAME: "admin"
+#      SPRING_DATASOURCE_PASSWORD: "admin123"
+#      SPRING_PROFILES_ACTIVE: "docker"
+#      SPRING_JPA_HIBERNATE_DDL_AUTO: "update"
+#      EUREKA_CLIENT_ENABLED: "true"
+#      EUREKA_URL: "http://ms-eureka:8761/eureka"
+#      JAVA_TOOL_OPTIONS: "-Xmx256m -Xms128m"
+#    mem_limit: 384m
+#    depends_on:
+#      mysql:
+#        condition: service_healthy
+#      ms-eureka:
+#        condition: service_started
+#    restart: unless-stopped
 
   ms-tienda:
     build: ./MicroServicioTiendaUbi
