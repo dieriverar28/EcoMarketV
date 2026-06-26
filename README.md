@@ -57,10 +57,20 @@ http://localhost:8084/api/v1/stock
 http://localhost:8083/api/v1/productos
 
 
---correr ms-descuento con eureka local sin docker
+Correr ms-descuento con eureka local sin docker
 
 --Terminal:
 
---cd MicroServicioDescuento
+cd MicroServicioDescuento
 
---C:\Users\PC\Downloads\apache-maven-3.9.16-bin\apache-maven-3.9.16\bin\mvn.cmd spring-boot:run
+C:\Users\PC\Downloads\apache-maven-3.9.16-bin\apache-maven-3.9.16\bin\mvn.cmd spring-boot:run
+
+--IMPLEMENTACION:
+
+Comentamos ms-descuento en docker-compose.yml
+
+Configuramos application.yml con IP 127.0.0.1 en lugar de hostname
+
+Ejecutamos ms-descuento localmente con Maven
+
+Se registró en Eureka correctamente
