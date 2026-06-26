@@ -65,6 +65,8 @@ cd MicroServicioDescuento
 
 C:\Users\PC\Downloads\apache-maven-3.9.16-bin\apache-maven-3.9.16\bin\mvn.cmd spring-boot:run
 
+http://localhost:8089/swagger-ui/index.html
+
 --IMPLEMENTACION:
 
 Comentamos ms-descuento en docker-compose.yml
