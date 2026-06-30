@@ -73,7 +73,15 @@ public class ClienteServiceImpl implements ClienteService {
     }
 
     private ClienteDTO.Response mapToResponse(Cliente c) {
-        return new ClienteDTO.Response();
+        ClienteDTO.Response response = new ClienteDTO.Response();
+        response.setId_cliente(c.getId_cliente());
+        response.setNombre(c.getNombre());
+        response.setEmail(c.getEmail());
+        response.setTelefono(c.getTelefono());
+        response.setComuna(c.getComuna());
+        response.setDireccion_envio(c.getDireccion_envio());
+        response.setGenero(c.getGenero());
+        return response;
     }
 
 }
