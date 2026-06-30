@@ -57,7 +57,7 @@ class CuponDescuentoServiceImplTest {
     // ---------- getAllCupones ----------
 
     @Test
-    void getAllCupones_deberiaRetornarListaDeCupones() {
+    void getAllCupones_ListaDeCupones() {
         when(cuponDescuentoRepository.findAll()).thenReturn(List.of(cupon));
 
         List<CuponDescuentoDTO.Response> resultado = cuponDescuentoService.getAllCupones();
@@ -69,7 +69,7 @@ class CuponDescuentoServiceImplTest {
     }
 
     @Test
-    void getAllCupones_deberiaRetornarListaVacia_siNoHayCupones() {
+    void getAllCupones_RetornarListaVacia() {
         when(cuponDescuentoRepository.findAll()).thenReturn(List.of());
 
         List<CuponDescuentoDTO.Response> resultado = cuponDescuentoService.getAllCupones();
@@ -80,7 +80,7 @@ class CuponDescuentoServiceImplTest {
     // ---------- getCuponDescuentoById ----------
 
     @Test
-    void getCuponDescuentoById_deberiaRetornarCupon_siExiste() {
+    void getCuponById_RetornarCupon() {
         when(cuponDescuentoRepository.findById(1)).thenReturn(Optional.of(cupon));
 
         CuponDescuentoDTO.Response resultado = cuponDescuentoService.getCuponDescuentoById(1);
@@ -91,7 +91,7 @@ class CuponDescuentoServiceImplTest {
     }
 
     @Test
-    void getCuponDescuentoById_deberiaLanzarExcepcion_siNoExiste() {
+    void getCuponId_LanzaException() {
         when(cuponDescuentoRepository.findById(99)).thenReturn(Optional.empty());
 
         RuntimeException ex = assertThrows(RuntimeException.class,
@@ -103,7 +103,7 @@ class CuponDescuentoServiceImplTest {
     // ---------- saveCuponDescuento ----------
 
     @Test
-    void saveCuponDescuento_deberiaGuardarYRetornarCupon_siDatosValidos() {
+    void CuponDescuento_GuardarYRetornarCupon() {
         when(cuponDescuentoRepository.save(any(CuponDescuento.class))).thenReturn(cupon);
 
         CuponDescuentoDTO.Response resultado = cuponDescuentoService.saveCuponDescuento(cupon);
@@ -115,7 +115,7 @@ class CuponDescuentoServiceImplTest {
     }
 
     @Test
-    void saveCuponDescuento_deberiaMapearCorrectamenteLaRespuesta() {
+    void CuponDescuento_MapearCorrectamente() {
         CuponDescuento nuevosCupon = new CuponDescuento();
         nuevosCupon.setId_cupon_descuento(2);
         nuevosCupon.setCodigo(54321);
@@ -137,7 +137,7 @@ class CuponDescuentoServiceImplTest {
     // ---------- updateCuponDescuento ----------
 
     @Test
-    void updateCuponDescuento_deberiaActualizarYRetornar1_siExiste() {
+    void CuponDescuento_ActualizarYRetornar() {
         CuponDescuento cuponActualizado = new CuponDescuento();
         cuponActualizado.setId_cupon_descuento(1);
         cuponActualizado.setCodigo(99999);
@@ -157,7 +157,7 @@ class CuponDescuentoServiceImplTest {
     }
 
     @Test
-    void updateCuponDescuento_deberiaLanzarExcepcion_siCuponNoExiste() {
+    void CuponDescuento_LanzarExcepcionsiNoExiste() {
         when(cuponDescuentoRepository.existsById(99)).thenReturn(false);
 
         CuponDescuento cuponNoExistente = new CuponDescuento();
@@ -173,7 +173,7 @@ class CuponDescuentoServiceImplTest {
     // ---------- deleteCuponDescuento ----------
 
     @Test
-    void deleteCuponDescuento_deberiaEliminarYRetornar1_siExiste() {
+    void CuponDescuento_EliminarYRetornar1() {
         when(cuponDescuentoRepository.existsById(1)).thenReturn(true);
         doNothing().when(cuponDescuentoRepository).deleteById(1);
 
@@ -185,7 +185,7 @@ class CuponDescuentoServiceImplTest {
     }
 
     @Test
-    void deleteCuponDescuento_deberiaLanzarExcepcion_siCuponNoExiste() {
+    void CuponDescuento_LanzarExcepcion() {
         when(cuponDescuentoRepository.existsById(99)).thenReturn(false);
 
         RuntimeException ex = assertThrows(RuntimeException.class,
@@ -196,7 +196,7 @@ class CuponDescuentoServiceImplTest {
     }
 
     @Test
-    void deleteCuponDescuento_deberiaVerificarExistenciaAntesDeBorrar() {
+    void CuponDescuento_VerificaExistenciaAntesDeBorrar() {
         when(cuponDescuentoRepository.existsById(1)).thenReturn(true);
         doNothing().when(cuponDescuentoRepository).deleteById(1);
 
