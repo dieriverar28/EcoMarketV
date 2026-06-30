@@ -1,10 +1,13 @@
 package com.example.MicroUsuarioSeguridad.service.impl;
 
 import java.util.List;
+
 import org.springframework.stereotype.Service;
+
 import com.example.MicroUsuarioSeguridad.entity.RolPermiso;
-import com.example.MicroUsuarioSeguridad.repository.RolPermisoRepository; // Ajusta según tu repo
+import com.example.MicroUsuarioSeguridad.repository.RolPermisoRepository;
 import com.example.MicroUsuarioSeguridad.service.RolPermisoService;
+
 import lombok.RequiredArgsConstructor;
 
 @Service
@@ -33,11 +36,13 @@ public class RolPermisoServiceimpl implements RolPermisoService {
     public RolPermiso actualizar(Integer id, RolPermiso rolPermiso) {
         RolPermiso existente = rolPermisoRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Rol-Permiso no encontrado"));
-        
-        // Aquí seteas los campos que necesites actualizar, por ejemplo:
-        // existente.setRol(rolPermiso.getRol());
-        // existente.setPermiso(rolPermiso.getPermiso());
-        
+
+        existente.setId_rol(rolPermiso.getId_rol());
+        existente.setId_permiso(rolPermiso.getId_permiso());
+        existente.setNombre_rol(rolPermiso.getNombre_rol());
+        existente.setModulo(rolPermiso.getModulo());
+        existente.setAccion(rolPermiso.getAccion());
+
         return rolPermisoRepository.save(existente);
     }
 
