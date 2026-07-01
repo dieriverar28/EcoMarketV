@@ -19,7 +19,7 @@ import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-class RutaEntregaServiceImplTest {
+class RutaServiceImplTest {
 
     @Mock
     private RutaEntregaRepository rutaEntregaRepository;
